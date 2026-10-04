@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Nota Media Ponderada - Formularios</title>
+<script>
+    function calcula() {
+        let nota1 = parseFloat(document.fdatos.n1.value);
+        let peso1 = parseFloat(document.fdatos.p1.value);
+        
+        let nota2 = parseFloat(document.fdatos.n2.value);
+        let peso2 = parseFloat(document.fdatos.p2.value);
+
+        // Cálculo de la nota media ponderada (asumiendo pesos en porcentaje ej. 30 y 70)
+        let mediaPonderada = (nota1 * (peso1 / 100)) + (nota2 * (peso2 / 100));
+        
+        document.fdatos.resultado.value = mediaPonderada.toFixed(2);
+    }
+</script>
+</head>
+<body>
+
+<form name="fdatos">
+    <h3>Cálculo de Nota Media Ponderada</h3>
+    
+    Nota 1: <input type="text" size="5" name="n1"/> 
+    Ponderación 1 (%): <input type="text" size="5" name="p1" value="30"/>
+    <br/><br/>
+    
+    Nota 2: <input type="text" size="5" name="n2"/> 
+    Ponderación 2 (%): <input type="text" size="5" name="p2" value="70"/>
+    <br/><br/>
+    
+    <input type="button" name="B1" value="Calcula" onclick="calcula()"/>
+    <br/><br/>
+    
+    Nota Media Ponderada: <input type="text" size="10" name="resultado"/>
+    <br/><br/>
+    
+    <input type="reset" value="Reset"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Cálculo de Peso de Referencia</title>
+<script>
+    function calcularPeso() {
+        let altura = parseFloat(document.fdatos.altura.value);
+        let edad = parseFloat(document.fdatos.edad.value);
+        let sexo = document.fdatos.sexo.value.toUpperCase();
+        
+        let pesoRef = 50 + (((altura - 150) / 4) * 3) + ((edad - 20) / 4);
+        
+        if (sexo === "M") {
+            pesoRef = pesoRef * 0.9;
+        }
+        
+        document.fdatos.resultado.value = pesoRef.toFixed(1).replace('.', ',');
+    }
+</script>
+</head>
+<body>
+
+<form name="fdatos">
+    <h3>Cálculo de Peso de Referencia</h3>
+    Altura (cm): <input type="text" size="10" name="altura"/><br/><br/>
+    Edad: <input type="text" size="10" name="edad"/><br/><br/>
+    Sexo (H/M): <input type="text" size="5" name="sexo"/><br/><br/>
+    Peso actual: <input type="text" size="10" name="pesoActual"/><br/><br/>
+    
+    <input type="button" value="Calcula" onclick="calcularPeso()"/><br/><br/>
+    
+    Peso referencia: <input type="text" size="10" name="resultado"/><br/><br/>
+    <input type="reset" value="Reset"/>
+</form>
+
+</body>
+</html>

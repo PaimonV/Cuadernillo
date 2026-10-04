@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body> 
+    <p>innerHml controla que puede incluirse en un elemento.</p>
+    <div id="Salida"></div>
+
+    <script>
+        let dato, num;
+
+        dato=window.prompt("Introduce numero ?", "0");
+        num=parseInt(dato);
+
+        let resultado= num * 2;
+
+        document.getElementById("Salida").innerHTML=`El doble es ${resultado}`;
+    </script>
+</body>
+</html>

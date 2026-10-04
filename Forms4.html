@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cuadrado y Cubo - Ambas Opciones</title>
+<script>
+    function calcularTodo() {
+        let num = parseFloat(document.datos.entrada.value);
+        document.datos.resCuadrado.value = num * num;
+        document.datos.resCubo.value = num * num * num;
+    }
+
+    // b) Dos funciones separadas
+    function calcularCuadrado(n) {
+        return n * n;
+    }
+
+    function calcularCubo(n) {
+        return n * n * n;
+    }
+
+    function procesarDosFunciones() {
+        let num = parseFloat(document.datos.entrada.value);
+        document.datos.resCuadrado.value = calcularCuadrado(num);
+        document.datos.resCubo.value = calcularCubo(num);
+    }
+</script>
+</head>
+<body>
+<form name="datos">
+    Introduce un número: <input type="text" size="10" name="entrada"/><br><br>
+    
+    <input type="button" value="Calcular (Una Función)" onclick="calcularTodo()"/>
+    <input type="button" value="Calcular (Dos Funciones)" onclick="procesarDosFunciones()"/><br><br>
+
+    Cuadrado: <input type="text" size="10" name="resCuadrado"/><br><br>
+    Cubo: <input type="text" size="10" name="resCubo"/><br><br>
+    
+    <input type="reset" value="Reset"/>
+</form>
+</body>
+</html>

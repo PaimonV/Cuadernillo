@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Calcular el 10% en Formularios </title>
+<script>
+    function calcularPorcentaje()
+    {
+        let valor = parseFloat(document.fdatos.entrada.value);
+        let resultado = valor * 0.10;
+        document.writeln(`El 10% de ${valor} es: ${resultado}`);
+    }
+</script>
+</head>
+
+<body>
+<form name="fdatos">
+    Introduce un valor: <input type="text" size="10" name="entrada"/>
+    <input type="button" value="Calcular 10%" onclick="calcularPorcentaje()" />
+</form>
+</body>
+</html>

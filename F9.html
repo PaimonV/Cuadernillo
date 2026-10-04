@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+<script>
+    function sumarNumeros(n1, n2) {
+        let resultado = n1 + n2;
+        document.write(`<h3>La suma de ${n1} + ${n2} es: ${resultado}</h3>`);
+    }
+</script>
+</head>
+<body>
+<script>
+    // Introducción de los números por el usuario en otra parte del código
+    let dato1 = prompt("Introduce el primer número:", "0");
+    let num1 = parseInt(dato1);
+
+    let dato2 = prompt("Introduce el segundo número:", "0");
+    let num2 = parseInt(dato2);
+
+    sumarNumeros(num1, num2);
+</script>
+</body>
+</html>

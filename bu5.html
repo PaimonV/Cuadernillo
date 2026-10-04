@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"/>
+<script>
+    let n = parseInt(prompt("Introduce el tamaño (mitad superior): ", "5"));
+
+    // Parte superior del rombo
+    for (let fila = 1; fila <= n; fila++)
+    {
+        for (let espacios = n - fila; espacios > 0; espacios--)
+            document.write("&nbsp;&nbsp;");
+
+        for (let conta = 1; conta < (2 * fila); conta++)
+            document.write("*");
+
+        document.writeln("<br>");
+    }
+
+    // Parte inferior del rombo
+    for (let fila = n - 1; fila >= 1; fila--)
+    {
+        for (let espacios = n - fila; espacios > 0; espacios--)
+            document.write("&nbsp;&nbsp;");
+
+        for (let conta = 1; conta < (2 * fila); conta++)
+            document.write("*");
+
+        document.writeln("<br>");
+    }
+</script>
+</head>
+</html>

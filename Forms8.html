@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Conversión de Temperatura - Formularios</title>
+<script>
+    // Función para convertir de Celsius a Fahrenheit
+    function convertirCelsiusAFahrenheit() {
+        let celsius = parseFloat(document.fdatos.celsius.value);
+        let fahrenheit = (celsius * 1.8) + 32;
+        document.fdatos.fahrenheit.value = fahrenheit;
+    }
+
+    // Función a la cual llega como parámetro un número en Fahrenheit y devuelve Celsius
+    function convertirFahrenheitACelsius(fahrenheit) {
+        let celsius = (fahrenheit - 32) / 1.8;
+        return celsius;
+    }
+
+    // Función que vincula el botón de Fahrenheit a Celsius con el formulario
+    function procesarFahrenheit() {
+        let fahrenheit = parseFloat(document.fdatos.fahrenheit.value);
+        let resultadoCelsius = convertirFahrenheitACelsius(fahrenheit);
+        document.fdatos.celsius.value = resultadoCelsius;
+    }
+</script>
+</head>
+<body>
+
+<form name="fdatos">
+    Grados Celsius (°C): <input type="text" size="10" name="celsius"/>
+    <input type="button" value="Convertir a °F" onclick="convertirCelsiusAFahrenheit()"/>
+    <br/><br/>
+    Grados Fahrenheit (°F): <input type="text" size="10" name="fahrenheit"/>
+    <input type="button" value="Convertir a °C" onclick="procesarFahrenheit()"/>
+    <br/><br/>
+    <input type="reset" value="Reset"/>
+</form>
+
+</body>
+</html>

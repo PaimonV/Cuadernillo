@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Tabla de Multiplicar</title>
+<script>
+    function generarTabla() {
+        // Pedimos los dos números al usuario
+        let num1 = parseInt(prompt("Introduce el primer número (ej. 2):", "2"));
+        let num2 = parseInt(prompt("Introduce el segundo número (ej. 4):", "4"));
+
+        // Validamos que sean números correctos
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Por favor, introduce números válidos.");
+            return;
+        }
+
+        // Construimos la estructura de la tabla HTML
+        let htmlTabla = "<table border='1' cellspacing='0' cellpadding='5'>";
+
+        // Bucle desde 1 hasta el segundo número introducido (num2)
+        for (let i = 1; i <= num2; i++) {
+            let resultado = num1 * i;
+            htmlTabla += `<tr>
+                <td>${num1} x ${i}</td>
+                <td>=</td>
+                <td>${resultado}</td>
+            </tr>`;
+        }
+
+        htmlTabla += "</table>";
+
+        // Mostramos la tabla en el documento
+        document.getElementById("resultadoTabla").innerHTML = htmlTabla;
+    }
+</script>
+</head>
+<body>
+
+    <h2>Ejercicio Bucles 7 - Tabla de Multiplicar</h2>
+    <button onclick="generarTabla()">Generar Tabla</button>
+    
+    <br><br>
+    <div id="resultadoTabla"></div>
+
+</body>
+</html>
